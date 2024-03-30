@@ -10,9 +10,14 @@ import scale from '../assets/scale.svg'
 import footer from '../assets/footer.svg'
 import FirstPage from './FirstPage'
 
-const Border = () => {
+const Border =({ children })  => {
     return (
-        <div className="w-screen h-screen bg-[#F8D1E0]">
+        <div className="relative w-full min-h-screen">
+          {/* Background styling goes here */}
+          <div className="absolute inset-0 z-0">
+            {/* Background content */}
+
+            <div className="w-screen h-screen bg-[#F8D1E0]">
             <div className='flex'>
                 <img src={funfox} alt="funfox" className="" />
                 <div style={{ position: 'relative', width: '100px', height: '100px' }}>
@@ -70,7 +75,14 @@ const Border = () => {
                 <img src={footer} alt="footer" />
             </div>
         </div>
-    )
+          </div>
+    
+          {/* Foreground content */}
+          <div className="relative z-10">
+            {children}
+          </div>
+        </div>
+      );
 }
 
 export default Border

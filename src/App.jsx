@@ -7,17 +7,15 @@ import FirstPage from './MyComponents/FirstPage';
 function App() {
 
   return (
-   <Router>
-      <Routes>
-        <Route element = {<Border />} >
-          <Route path="/" element={FirstPage} />
-        </Route>
-      </Routes>
+    <Router>
+      <Border>
+        <Routes>
+          <Route path="/" element={<FirstPage />} />
+        </Routes>
+      </Border>
     </Router>
+  );
 
-
-    
-    )
 }
 
 export default App
